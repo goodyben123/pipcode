@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Pip code</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script
+    type="text/javascript"
+    src="//code.jquery.com/jquery-2.2.4.js"
+  ></script>
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style id="compiled-css" type="text/css">
+      body {
+    background-image: url("rsz_pip_code_background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+img:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s; 
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite; 
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+#header {
+  width:250px;
+  height:200px;
+    border:2px solid black;
+  background-color: powderblue;
+  border-radius:10px 10px 0px 0px;
+
+}
+#code {
+  width:250px ;
+  height:100px;
+  resize: none;
+  border:2px solid black;
+  background-color: #E2E1E3;
+  border-radius:10px 10px 0px 0px;
+}
+#p1 {
+  width:250px;
+  border:2px solid black;
+  height:100px;
+  background-color: green;
+  border-radius:0px 0px 10px 10px;
+
+}
+.button {
+  background-color: #8215F0;
+  font:tahoma;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius:10px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: grab;
+  
+
+
+
+}
+.button2 {
+  background-color: #8215F0;
+  border-radius:10px;
+  font:tahoma;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: help;
+}
+
+
+  </style>
+  <!-- TODO: Missing CoffeeScript 2 -->
+  <script type="text/javascript">
+    window.onload=function(){
+$("#save-btn").click(function() {
+  var blob = new Blob(["talk hello"], {type: "text/plain;charset=utf-8"});
+  saveAs(blob, "save.pip");
+});
+function readFile() {
+jQuery.get('test.pip',function(txt)
+  $('#code').text(txt));
+}
+    }
+</script>
+</head>
+<body>
+<html>
+<head>
+	<title>pip code</title>
+	<link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+</head>
+<body>
+<img class="imglink"
+src="piptitle0000.png" alt="Pip code title">
+<div id="header">
+<textarea id="code"></textarea>
+<br>
+<button onclick="run()">
+<input class=button type="submit" value="Run code">
+</button>
+<a   href="javascript:void(0)" id="dlbtn"><button class="button">Save code</button></a>
+<a   href="pipstudios.html"><button class="button">Home</button></a>
+<a   href="learnpip.html"><button class="button">Learn pip code</button></a>
+<div id="p1">
+OUTPUT
+</div>
+<img width=200px height=25px src="webweaving.gif" alt="web weaving">
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+<input onclick=responsiveVoice.speak(print); type='button' value='🔊 Play' />
+</body>
+
+<script>
+	function run() {
+  var i;
+  var commands = $(code).val().split('\n');
+  for (i = 0; i < commands.length; i++) {
+    var current = commands[i];
+    if (current.startsWith("talk ")) {
+      var print = current.substring(5);
+      document.getElementById("p1").innerHTML = print;
+    }  
+  }
+}
+$("#header").on('mousedown', function(){
+    if($('#code').val().indexOf('dae') > -1 ){
+        document.getElementById("p1").innerHTML = "😃"
+    }});
+$("#header").on('mousedown', function(){
+    if($('#code').val().indexOf('dad') > -1 ){
+        document.getElementById("p1").innerHTML = "🐶"
+    }
+});
+
+$("#header").on('mousedown', function(){
+    if($('#code').val().indexOf('clear') > -1 ){
+        document.getElementById("p1").innerHTML = ""
+    }
+});
+
+
+$("#header").on('mousedown', function(){
+    if($('#code').val().indexOf('ipg') > -1 ){
+        document.getElementById("p1").innerHTML = "LOADING PIP GAMES..."
+        window.location.href = 'pipgames.html';    
+    }
+});
+
+
+setTimeout("create(code, 'project.txt', 'text/plain')");
+function create(text, name, type) {
+  var dlbtn = document.getElementById("dlbtn");
+  var file = new Blob([text], {type: type});
+  dlbtn.href = URL.createObjectURL(file);
+  dlbtn.download = name;
+}
+
+
+</script>
+<body>
+<input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' id=myBtn class=myBtn />
+</body>
+</html>
